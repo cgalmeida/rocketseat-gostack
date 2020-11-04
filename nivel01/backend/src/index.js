@@ -84,7 +84,7 @@ app.delete('/projects/:id',  (request, response) => {
 
     }
 
-    projects.splica(projectIndex, 1);
+    projects.splice(projectIndex, 1);
     return response.status(204).send();
 });
 
