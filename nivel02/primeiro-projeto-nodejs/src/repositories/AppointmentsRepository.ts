@@ -12,7 +12,10 @@ class AppointementRepository {
     constructor() {
         this.appointments = [];
     }
+ public all(): Appointment []{
+     return this.appointments;
 
+ }
     public fiundByDate(date: Date): Appointment | null {
         const findAppointment = this.appointments.find(appointment =>
             isEqual(date, appointment.date),
@@ -21,12 +24,12 @@ class AppointementRepository {
 
     }
     public create(provider: string, date: Date): Appointment {
-
         const appointment = new Appointment(provider, date);
+    
         this.appointments.push(appointment);
-
+    
         return appointment;
-    };
+      }
 
 
 }
