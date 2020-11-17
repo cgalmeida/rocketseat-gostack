@@ -6,6 +6,13 @@ import { isEqual } from 'date-fns';
 // metodos comuns: find, create...
 // responsavel pelas operacoes em banco de dados
 
+
+interface CreateAppointmentDTO {
+
+    provider: string;
+     date: Date;
+}
+
 class AppointementRepository {
     private appointments: Appointment[] = [];
 
@@ -23,8 +30,9 @@ class AppointementRepository {
         return findAppointment || null
 
     }
-    public create(provider: string, date: Date): Appointment {
-        const appointment = new Appointment(provider, date);
+    //provider: string, date: Date
+    public create({provider,date}: CreateAppointmentDTO): Appointment {
+        const appointment = new Appointment({provider, date});
     
         this.appointments.push(appointment);
     
