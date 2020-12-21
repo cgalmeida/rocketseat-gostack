@@ -20,6 +20,9 @@ class User {
         this.date = date;
     }*/
 
+    @Column()
+    avatar: string;
+
     @CreateDateColumn()
     created_at: Date;
 
